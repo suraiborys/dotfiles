@@ -1,0 +1,32 @@
+# Environment
+.env
+
+# JetBrains
+.idea
+
+# OS-specific stuff
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+## Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+*.lnk
+
+## Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Cache directories
+.cache/
+__pycache__/
+*.py[cod]

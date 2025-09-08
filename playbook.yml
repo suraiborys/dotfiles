@@ -1,0 +1,13 @@
+- name: Setup dotfiles
+  hosts: local
+  tasks:
+    - name: Create ghostty config directory
+      file:
+        path: ~/.config/ghostty
+        state: directory
+
+    - name: Link ghostty config
+      file:
+        src: "{{ playbook_dir }}/files/ghostty/config"
+        dest: ~/.config/ghostty/config
+        state: link
