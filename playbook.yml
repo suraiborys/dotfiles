@@ -11,3 +11,14 @@
         src: "{{ playbook_dir }}/files/ghostty/config"
         dest: ~/.config/ghostty/config
         state: link
+
+    - name: Create nvim config directory
+      file:
+        path: ~/.config/nvim
+        state: directory
+
+    - name: Link nvim config
+      file:
+        src: "{{ playbook_dir }}/files/nvim/init.lua"
+        dest: ~/.config/nvim/init.lua
+        state: link
