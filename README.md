@@ -8,6 +8,8 @@ Automated dotfiles setup using Ansible.
 
 ## Available dotfiles
 - [x] ghostty
+- [x] zed
+- [x] nvim
 
 ## Quick Start
 ```bash
