@@ -10,6 +10,7 @@ Automated dotfiles setup using Ansible.
 - [x] ghostty
 - [x] zed
 - [x] nvim
+- [X] tmux
 
 ## Quick Start
 ```bash
