@@ -33,3 +33,15 @@
         src: "{{ playbook_dir }}/files/zed/settings.json"
         dest: ~/.config/zed/settings.json
         state: link
+
+    - name: Clone Tmux Plugin Manager if not exists
+      git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: ~/.tmux/plugins/tpm
+        update: no
+
+    - name: link tmux config
+      file:
+        src: "{{ playbook_dir }}/files/tmux/.tmux.conf"
+        dest: ~/.tmux.conf
+        state: link
