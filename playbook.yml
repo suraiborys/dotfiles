@@ -40,8 +40,25 @@
         dest: ~/.tmux/plugins/tpm
         update: no
 
-    - name: link tmux config
+    - name: Link tmux config
       file:
         src: "{{ playbook_dir }}/files/tmux/.tmux.conf"
         dest: ~/.tmux.conf
+        state: link
+
+    - name: Link zsh config
+      file:
+        src: "{{ playbook_dir }}/files/zsh/.zshrc"
+        dest: ~/.zshrc
+        state: link
+
+    - name: Create starship config directory
+      file:
+        path: ~/.config/starship
+        state: directory
+
+    - name: Link starship config
+      file:
+        src: "{{ playbook_dir }}/files/starship/starship.toml"
+        dest: ~/.config/starship/starship.toml
         state: link

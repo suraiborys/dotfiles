@@ -8,13 +8,20 @@ Automated dotfiles setup using Ansible for personal developer experience.
 
 ## Prerequisites
 - Ansible installed (e.g., via pip or your package manager)
-- macOS/Linux shell environment
+- macOS shell environment (primary target)
+- Nerd Font installed for proper terminal rendering
+
+**Platform Compatibility:**
+- **macOS**: Supported
+- **Ubuntu/Linux**: Can work with tweaks to paths and package installation commands in the playbook
 
 ## Available dotfiles
 - [x] ghostty
 - [x] zed
 - [x] nvim
-- [X] tmux
+- [x] tmux
+- [x] zsh
+- [x] starship
 
 ## Quick Start
 ```bash
