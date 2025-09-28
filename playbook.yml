@@ -23,6 +23,52 @@
         dest: ~/.config/nvim/init.lua
         state: link
 
+    - name: Create nvim lua directory
+      file:
+        path: ~/.config/nvim/lua
+        state: directory
+
+    - name: Link nvim options
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/opts.lua"
+        dest: ~/.config/nvim/lua/opts.lua
+        state: link
+
+    - name: Link neovim keymaps
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/keymaps.lua"
+        dest: ~/.config/nvim/lua/keymaps.lua
+        state: link
+
+    - name: Link neovim lazy setup
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/lazy-setup.lua"
+        dest: ~/.config/nvim/lua/lazy-setup.lua
+        state: link
+
+    - name: create nvim plugins directory
+      file:
+        path: ~/.config/nvim/lua/plugins
+        state: directory
+
+    - name: Link nvim plugins
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/init.lua"
+        dest: ~/.config/nvim/lua/plugins/init.lua
+        state: link
+
+    - name: Link nvim colorscheme
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/colorscheme.lua"
+        dest: ~/.config/nvim/lua/plugins/colorscheme.lua
+        state: link
+
+    - name: Link nvim tree explorer
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/nvim-tree.lua"
+        dest: ~/.config/nvim/lua/plugins/nvim-tree.lua
+        state: link
+
     - name: Create zed config directory
       file:
         path: ~/.config/zed
