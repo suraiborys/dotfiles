@@ -86,6 +86,12 @@
         dest: ~/.tmux/plugins/tpm
         update: no
 
+    - name: Clone fzf-git.sh if not exists
+      git:
+        repo: https://github.com/junegunn/fzf-git.sh.git
+        dest: ~/fzf-git.sh
+        update: no
+
     - name: Link tmux config
       file:
         src: "{{ playbook_dir }}/files/tmux/.tmux.conf"

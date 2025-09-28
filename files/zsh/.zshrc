@@ -68,6 +68,12 @@ if command -v fd >/dev/null 2>&1; then
     }
 fi
 
+# ---- FZF-GIT -----
+
+# Load fzf-git.sh for enhanced git integration with fzf
+if [[ -f ~/fzf-git.sh/fzf-git.sh ]]; then
+    source ~/fzf-git.sh/fzf-git.sh
+fi
 
 # Load local/custom settings if they exist
 # This allows for user-specific configuration without committing to repo
