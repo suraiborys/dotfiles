@@ -40,3 +40,9 @@ fi
 if command -v starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
 fi
+
+# Load local/custom settings if they exist
+# This allows for user-specific configuration without committing to repo
+if [[ -f ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
