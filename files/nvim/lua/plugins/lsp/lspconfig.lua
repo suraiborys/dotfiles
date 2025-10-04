@@ -67,9 +67,6 @@ return {
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    -- Set offset encoding to utf-16 for all clients
-    capabilities.offsetEncoding = { "utf-16" }
-
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
@@ -88,14 +85,23 @@ return {
       },
     }))
 
-    vim.lsp.config("pyright", vim.tbl_extend("force", default_config, {
+    -- Configure Pyright with UTF-16 offset encoding
+    local pyright_capabilities = vim.deepcopy(capabilities)
+    pyright_capabilities.offsetEncoding = { "utf-16" }
+
+    vim.lsp.config("pyright", {
+      capabilities = pyright_capabilities,
       settings = {
         pyright = { disableOrganizeImports = true },
         python = { analysis = { typeCheckingMode = "basic" } },
       },
-    }))
+    })
 
-    vim.lsp.config("ruff", default_config)
+    -- Configure Ruff with UTF-16 offset encoding
+    local ruff_capabilities = vim.deepcopy(capabilities)
+    ruff_capabilities.offsetEncoding = { "utf-16" }
+
+    vim.lsp.config("ruff", { capabilities = ruff_capabilities })
     vim.lsp.config("ts_ls", default_config)
     vim.lsp.config("html", default_config)
     vim.lsp.config("cssls", default_config)
