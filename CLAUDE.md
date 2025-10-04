@@ -45,14 +45,33 @@ files/
 ├── ghostty/config               # Terminal emulator config
 ├── nvim/                       # Neovim configuration
 │   ├── init.lua               # Main config entry point
+│   ├── nvim.md                # Keyboard shortcuts reference
 │   └── lua/
 │       ├── opts.lua           # Vim options
 │       ├── keymaps.lua        # Key mappings
 │       ├── lazy-setup.lua     # Plugin manager setup
 │       └── plugins/
-│           ├── init.lua       # Basic plugins list
-│           ├── colorscheme.lua # Tokyo Night theme
-│           └── nvim-tree.lua  # File explorer
+│           ├── init.lua            # Basic plugins list
+│           ├── colorscheme.lua     # Tokyo Night theme
+│           ├── nvim-tree.lua       # File explorer
+│           ├── telescope.lua       # Fuzzy finder
+│           ├── which-key.lua       # Keymap hints
+│           ├── alpha.lua           # Greeting screen
+│           ├── bufferline.lua      # Tab bar
+│           ├── lualine.lua         # Status line
+│           ├── dressing.lua        # Better UI
+│           ├── vim-maximizer.lua   # Split maximizer
+│           ├── treesitter.lua      # Syntax highlighting
+│           ├── indent-blankline.lua # Indent guides
+│           ├── autopairs.lua       # Auto-close pairs
+│           ├── nvim-cmp.lua        # Completion engine
+│           ├── formatting.lua      # conform.nvim
+│           ├── linting.lua         # nvim-lint
+│           ├── gitsigns.lua        # Git integration
+│           ├── lazygit.lua         # Git TUI
+│           └── lsp/
+│               ├── mason.lua       # LSP installer
+│               └── lspconfig.lua   # LSP configuration
 ├── tmux/.tmux.conf            # Tmux with TPM plugin manager
 ├── zed/settings.json          # Zed editor settings
 ├── zsh/.zshrc                 # ZSH with fzf, fd, plugins
@@ -79,10 +98,33 @@ files/
 ## Key Features
 
 ### Neovim Setup
-- **Plugin Manager**: lazy.nvim with priority loading
+- **Plugin Manager**: lazy.nvim with automatic plugin installation
 - **Colorscheme**: Tokyo Night with custom color overrides
-- **File Explorer**: nvim-tree with custom keybindings
-- **Navigation**: vim-tmux-navigator for seamless pane switching
+- **File Explorer**: nvim-tree with git integration and custom keybindings
+- **Fuzzy Finder**: Telescope with fzf-native for fast file/string searching
+- **LSP Integration**:
+  - Python: Pyright (type checking) + Ruff (formatting/linting)
+  - TypeScript/JavaScript: ts_ls + ESLint
+  - Web: HTML, CSS, TailwindCSS
+  - Lua: lua_ls
+- **Formatting**: conform.nvim with format-on-save (Ruff, Prettier, Stylua)
+- **Linting**: nvim-lint with automatic triggers (Ruff, ESLint)
+- **Completion**: nvim-cmp with LSP, buffer, path, and snippet sources
+- **Git Integration**:
+  - gitsigns.nvim for inline git changes, blame, and hunk operations
+  - lazygit.nvim for full git TUI
+- **UI Enhancements**:
+  - lualine (statusline)
+  - bufferline (tab bar)
+  - which-key (keymap hints)
+  - alpha (greeting screen)
+  - dressing (better UI components)
+- **Code Features**:
+  - Treesitter syntax highlighting
+  - Auto-pairs for brackets/quotes
+  - Indent guides
+  - Split window maximizer
+- **Documentation**: `nvim.md` contains all keyboard shortcuts reference
 
 ### Shell Enhancement
 - **FZF Integration**: File/directory fuzzy finding with fd backend
@@ -96,6 +138,11 @@ files/
 - macOS environment (primary target)
 - Git (for external repository cloning)
 - Nerd Font for proper icon rendering
+- Node.js (for TypeScript LSP servers)
+- Python 3.x with uv (Astral's package manager)
+- Ripgrep (for Telescope live grep)
+- fd (for Telescope file finding)
+- lazygit (for git TUI integration)
 
 ## Development Notes
 
@@ -103,3 +150,8 @@ files/
 - Never create manual symlinks - always update playbook
 - Test changes with `--check` flag before applying
 - Local settings go in `~/.zshrc.local`, not the repo
+- Each Neovim plugin should be in its own file in `files/nvim/lua/plugins/`
+- LSP-related plugins go in `files/nvim/lua/plugins/lsp/`
+- All keyboard shortcuts are documented in `files/nvim/nvim.md`
+- Mason auto-installs LSP servers, formatters, and linters on first run
+- Format-on-save is enabled by default with 1000ms timeout
