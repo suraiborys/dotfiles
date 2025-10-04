@@ -69,6 +69,113 @@
         dest: ~/.config/nvim/lua/plugins/nvim-tree.lua
         state: link
 
+    - name: Link nvim which key 
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/nvim-tree.lua"
+        dest: ~/.config/nvim/lua/plugins/which-key.lua
+        state: link
+
+    - name: Link nvim telescope fuzzy finder 
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/telescope.lua"
+        dest: ~/.config/nvim/lua/plugins/telescope.lua
+        state: link
+
+    - name: Link nvim greeting
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/alpha.lua"
+        dest: ~/.config/nvim/lua/plugins/alpha.lua
+        state: link
+
+    - name: Create nvim plugins/lsp directory
+      file:
+        path: ~/.config/nvim/lua/plugins/lsp
+        state: directory
+
+    - name: Link nvim LSP mason config
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/lsp/mason.lua"
+        dest: ~/.config/nvim/lua/plugins/lsp/mason.lua
+        state: link
+
+    - name: Link nvim LSP config
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/lsp/lspconfig.lua"
+        dest: ~/.config/nvim/lua/plugins/lsp/lspconfig.lua
+        state: link
+
+    - name: Link nvim completion config
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/nvim-cmp.lua"
+        dest: ~/.config/nvim/lua/plugins/nvim-cmp.lua
+        state: link
+
+    - name: Link nvim bufferline
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/bufferline.lua"
+        dest: ~/.config/nvim/lua/plugins/bufferline.lua
+        state: link
+
+    - name: Link nvim lualine
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/lualine.lua"
+        dest: ~/.config/nvim/lua/plugins/lualine.lua
+        state: link
+
+    - name: Link nvim dressing
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/dressing.lua"
+        dest: ~/.config/nvim/lua/plugins/dressing.lua
+        state: link
+
+    - name: Link nvim vim-maximizer
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/vim-maximizer.lua"
+        dest: ~/.config/nvim/lua/plugins/vim-maximizer.lua
+        state: link
+
+    - name: Link nvim treesitter
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/treesitter.lua"
+        dest: ~/.config/nvim/lua/plugins/treesitter.lua
+        state: link
+
+    - name: Link nvim indent-blankline
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/indent-blankline.lua"
+        dest: ~/.config/nvim/lua/plugins/indent-blankline.lua
+        state: link
+
+    - name: Link nvim autopairs
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/autopairs.lua"
+        dest: ~/.config/nvim/lua/plugins/autopairs.lua
+        state: link
+
+    - name: Link nvim formatting
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/formatting.lua"
+        dest: ~/.config/nvim/lua/plugins/formatting.lua
+        state: link
+
+    - name: Link nvim linting
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/linting.lua"
+        dest: ~/.config/nvim/lua/plugins/linting.lua
+        state: link
+
+    - name: Link nvim gitsigns
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/gitsigns.lua"
+        dest: ~/.config/nvim/lua/plugins/gitsigns.lua
+        state: link
+
+    - name: Link nvim lazygit
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/lazygit.lua"
+        dest: ~/.config/nvim/lua/plugins/lazygit.lua
+        state: link
+
     - name: Create zed config directory
       file:
         path: ~/.config/zed
