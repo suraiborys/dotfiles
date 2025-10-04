@@ -67,6 +67,9 @@ return {
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
+    -- Set offset encoding to utf-16 for all clients
+    capabilities.offsetEncoding = { "utf-16" }
+
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
