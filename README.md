@@ -10,10 +10,14 @@ Personal dotfiles setup using Ansible. Works on my machine)))
 - Ansible installed (e.g., via pip or your package manager)
 - macOS shell environment (primary target)
 - Nerd Font installed for proper terminal rendering
+- Node.js (for TypeScript LSP servers)
+- Python 3.x with uv (Astral's package manager)
+- Ripgrep (for Telescope live grep)
+- fd (for Telescope file finding)
+- lazygit (for git TUI integration)
 
 **Optional Dependencies (auto-detected):**
 - `fzf` - Fuzzy finder for enhanced shell experience
-- `fd` - Fast alternative to find (improves fzf performance)
 - `starship` - Cross-shell prompt
 - `git` - Required for fzf-git integration
 
@@ -34,9 +38,20 @@ Personal dotfiles setup using Ansible. Works on my machine)))
 ### Neovim Features
 - **Plugin Manager**: lazy.nvim with auto-installation
 - **Colorscheme**: Tokyo Night theme with custom colors
-- **File Explorer**: nvim-tree with intuitive keybindings
-- **Navigation**: vim-tmux-navigator for seamless window switching
-- **Utility**: plenary.nvim for Lua functions
+- **File Explorer**: nvim-tree with git integration
+- **Fuzzy Finder**: Telescope with fzf-native for fast search
+- **LSP Support**:
+  - Python: Pyright (type checking) + Ruff (linting/formatting)
+  - TypeScript/JavaScript: ts_ls + ESLint
+  - Web: HTML, CSS, TailwindCSS
+  - Lua: lua_ls
+- **Formatting**: conform.nvim with format-on-save (Ruff, Prettier, Stylua)
+- **Linting**: nvim-lint with auto-triggers (Ruff, ESLint)
+- **Completion**: nvim-cmp with LSP, snippets, buffer, and path sources
+- **Git Integration**: gitsigns (inline changes) + lazygit (full TUI)
+- **UI Enhancements**: lualine, bufferline, which-key, alpha, dressing
+- **Syntax**: Treesitter highlighting, auto-pairs, indent guides
+- **Documentation**: See `files/nvim/nvim.md` for all keybindings
 
 ### Shell Enhancements
 - **FZF Integration**: Fuzzy finding with fd backend
@@ -52,10 +67,16 @@ ansible-playbook -i inventory/hosts playbook.yml
 ## Key Features & Usage
 
 ### Neovim Keybindings
+**See `files/nvim/nvim.md` for complete reference**
+
+Quick highlights:
 - **Leader key**: `Space`
 - **File Explorer**: `<leader>ee` - Toggle, `<leader>ef` - Focus current file
-- **Lazy Plugin Manager**: `:Lazy` - Open plugin interface
-- **Window Navigation**: `<C-h/j/k/l>` - Navigate between vim/tmux panes
+- **Fuzzy Find**: `<leader>ff` - Files, `<leader>fs` - Live grep, `<leader>fr` - Recent files
+- **LSP**: `gd` - Definition, `gr` - References, `K` - Hover, `<leader>ca` - Code actions
+- **Git**: `<leader>lg` - LazyGit, `]h`/`[h]` - Next/prev hunk, `<leader>hs` - Stage hunk
+- **Format**: `<leader>mp` - Format file (auto-format on save enabled)
+- **Which-key**: Press `<leader>` and wait to see available keybindings
 
 ### FZF Keybindings
 - **File Search**: `<C-t>` - Find files
@@ -85,7 +106,7 @@ export PATH="$HOME/.local/bin:$PATH"
 ```
 
 ### Neovim Plugins
-Add plugins to `files/nvim/lua/plugins/` directory and link via playbook. Or just copy the files manually if you don't trust my Ansible setup.
+Each plugin gets its own file in `files/nvim/lua/plugins/`. LSP-related plugins go in `files/nvim/lua/plugins/lsp/`. Add new plugins, update playbook to symlink them, then run the playbook. Mason auto-installs LSP servers on first launch.
 
 ### Shell Modifications
 Edit `files/zsh/.zshrc` for changes that should apply everywhere. Remember, this is my personal taste - your mileage may vary.
@@ -96,15 +117,39 @@ Edit `files/zsh/.zshrc` for changes that should apply everywhere. Remember, this
 │   ├── ghostty/config
 │   ├── nvim/              # Neovim configuration
 │   │   ├── init.lua
+│   │   ├── nvim.md        # Keyboard shortcuts reference
 │   │   └── lua/
 │   │       ├── opts.lua
 │   │       ├── keymaps.lua
 │   │       ├── lazy-setup.lua
-│   │       └── plugins/
+│   │       └── plugins/   # 18 plugin files
+│   │           ├── init.lua
+│   │           ├── colorscheme.lua
+│   │           ├── nvim-tree.lua
+│   │           ├── telescope.lua
+│   │           ├── which-key.lua
+│   │           ├── alpha.lua
+│   │           ├── bufferline.lua
+│   │           ├── lualine.lua
+│   │           ├── dressing.lua
+│   │           ├── vim-maximizer.lua
+│   │           ├── treesitter.lua
+│   │           ├── indent-blankline.lua
+│   │           ├── autopairs.lua
+│   │           ├── nvim-cmp.lua
+│   │           ├── formatting.lua
+│   │           ├── linting.lua
+│   │           ├── gitsigns.lua
+│   │           ├── lazygit.lua
+│   │           └── lsp/
+│   │               ├── mason.lua
+│   │               └── lspconfig.lua
 │   ├── tmux/.tmux.conf
 │   ├── zed/settings.json
 │   ├── zsh/.zshrc
 │   └── starship/starship.toml
 ├── inventory/hosts        # Ansible inventory
-└── playbook.yml          # Main Ansible playbook
+├── playbook.yml          # Main Ansible playbook
+├── CLAUDE.md             # Project guidance for Claude Code
+└── README.md             # This file
 ```
