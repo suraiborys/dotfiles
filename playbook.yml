@@ -193,6 +193,18 @@
         dest: ~/.tmux/plugins/tpm
         update: no
 
+    - name: Install TPM plugins
+      shell: ~/.tmux/plugins/tpm/bin/install_plugins
+      args:
+        creates: ~/.tmux/plugins/tmux-resurrect
+      register: tpm_install
+      ignore_errors: yes
+
+    - name: Display TPM installation result
+      debug:
+        msg: "TPM plugins installed. Restart tmux or press prefix + I to ensure plugins are loaded."
+      when: tpm_install.changed
+
     - name: Clone fzf-git.sh if not exists
       git:
         repo: https://github.com/junegunn/fzf-git.sh.git
