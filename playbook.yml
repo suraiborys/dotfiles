@@ -182,6 +182,12 @@
         dest: ~/.config/nvim/lua/plugins/debug.lua
         state: link
 
+    - name: Link nvim ufo (folding)
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/ufo.lua"
+        dest: ~/.config/nvim/lua/plugins/ufo.lua
+        state: link
+
     - name: Create zed config directory
       file:
         path: ~/.config/zed

@@ -38,6 +38,30 @@ Leader key: `<Space>`
 
 ---
 
+## Code Folding
+
+Treesitter-powered syntax-aware folding for functions, classes, blocks, etc.
+
+| Keymap | Description                        |
+| ------ | ---------------------------------- |
+| `zf`   | Toggle fold under cursor           |
+| `zF`   | Toggle fold and all nested folds   |
+| `zO`   | Open all folds in file             |
+| `zC`   | Close all folds in file            |
+
+### Native Vim Folding Commands (also work)
+
+- `zo` - Open fold under cursor
+- `zc` - Close fold under cursor
+- `zR` - Open all folds
+- `zM` - Close all folds
+- `zj` - Move to next fold
+- `zk` - Move to previous fold
+
+Files open with all folds expanded by default.
+
+---
+
 ## File Explorer (nvim-tree)
 
 | Keymap       | Description                          |

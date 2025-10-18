@@ -24,3 +24,11 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+---------------------
+-- Code Folding -------------------
+
+keymap.set("n", "zf", "za", { desc = "Toggle fold under cursor" })
+keymap.set("n", "zF", "zA", { desc = "Toggle fold and all nested folds" })
+keymap.set("n", "zO", "zR", { desc = "Open all folds in file" })
+keymap.set("n", "zC", "zM", { desc = "Close all folds in file" })

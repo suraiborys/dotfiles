@@ -37,6 +37,10 @@ return {
         "query",
         "vimdoc",
         "c",
+        "python",
+      },
+      fold = {
+        enable = true,
       },
       incremental_selection = {
         enable = true,
