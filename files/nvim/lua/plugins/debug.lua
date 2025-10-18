@@ -7,32 +7,21 @@ return {
       "nvim-neotest/nvim-nio", -- Required for nvim-dap-ui
     },
     keys = {
-      -- F-key bindings (may conflict with macOS)
+      -- F-key bindings
       { "<F5>", function() require("dap").continue() end, desc = "Debug: Start/Continue" },
-      { "<F10>", function() require("dap").step_over() end, desc = "Debug: Step Over" },
-      { "<F11>", function() require("dap").step_into() end, desc = "Debug: Step Into" },
-      { "<F12>", function() require("dap").step_out() end, desc = "Debug: Step Out" },
-
-      -- Alternative macOS-friendly bindings
-      { "<leader>dC", function() require("dap").continue() end, desc = "Debug: Continue" },
-      { "<leader>dv", function() require("dap").step_over() end, desc = "Debug: Step Over" },
-      { "<leader>di", function() require("dap").step_into() end, desc = "Debug: Step Into" },
-      { "<leader>dO", function() require("dap").step_out() end, desc = "Debug: Step Out" },
+      { "<F6>", function() require("dap").step_out() end, desc = "Debug: Step Out" },
+      { "<F8>", function() require("dap").step_over() end, desc = "Debug: Step Over" },
+      { "<F9>", function() require("dap").step_into() end, desc = "Debug: Step Into" },
 
       -- Breakpoints
-      { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Debug: Toggle Breakpoint" },
+      { "<leader>t", function() require("dap").toggle_breakpoint() end, desc = "Debug: Toggle Breakpoint" },
       {
-        "<leader>dB",
+        "<leader>T",
         function()
           require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
         end,
         desc = "Debug: Conditional Breakpoint",
       },
-
-      -- Other commands
-      { "<leader>dr", function() require("dap").repl.open() end, desc = "Debug: Open REPL" },
-      { "<leader>dt", function() require("dap").terminate() end, desc = "Debug: Terminate" },
-      { "<leader>dl", function() require("dap").run_last() end, desc = "Debug: Run Last" },
     },
   },
 
@@ -87,24 +76,8 @@ return {
         console = "integratedTerminal",
       })
     end,
-    keys = {
-      {
-        "<leader>dm",
-        function()
-          require("dap-python").test_method()
-        end,
-        desc = "Debug: Test Method",
-        ft = "python",
-      },
-      {
-        "<leader>dc",
-        function()
-          require("dap-python").test_class()
-        end,
-        desc = "Debug: Test Class",
-        ft = "python",
-      },
-    },
+    -- No keybindings to avoid dangerous 'd' prefix
+    -- Use dap.configurations to debug tests manually
   },
 
   -- Visual debugging UI
@@ -173,15 +146,7 @@ return {
         dapui.close()
       end
     end,
-    keys = {
-      { "<leader>du", function() require("dapui").toggle() end, desc = "Debug: Toggle UI" },
-      {
-        "<leader>de",
-        function() require("dapui").eval() end,
-        mode = { "n", "v" },
-        desc = "Debug: Evaluate Expression",
-      },
-    },
+    -- UI auto-opens, no keybindings needed to avoid dangerous 'd' prefix
   },
 
   -- Virtual text - shows variable values inline
