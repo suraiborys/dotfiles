@@ -1,2 +1,6 @@
 theme = Catppuccin Frappe
 copy-on-select = clipboard
+
+# Font configuration
+font-family = "Iosevka Nerd Font"
+font-size = 13
