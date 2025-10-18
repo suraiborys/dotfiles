@@ -176,6 +176,12 @@
         dest: ~/.config/nvim/lua/plugins/lazygit.lua
         state: link
 
+    - name: Link nvim debug (DAP)
+      file:
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/debug.lua"
+        dest: ~/.config/nvim/lua/plugins/debug.lua
+        state: link
+
     - name: Create zed config directory
       file:
         path: ~/.config/zed

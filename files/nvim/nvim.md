@@ -126,6 +126,74 @@ Leader key: `<Space>`
 
 ---
 
+## Debugging (nvim-dap)
+
+### Basic Debugging
+
+| Keymap        | Description                      |
+| ------------- | -------------------------------- |
+| `<F5>`        | Start/Continue debugging         |
+| `<leader>dC`  | Continue (macOS-friendly)        |
+| `<F10>`       | Step Over                        |
+| `<leader>dv`  | Step Over (macOS-friendly)       |
+| `<F11>`       | Step Into                        |
+| `<leader>di`  | Step Into (macOS-friendly)       |
+| `<F12>`       | Step Out                         |
+| `<leader>dO`  | Step Out (macOS-friendly)        |
+| `<leader>db`  | Toggle Breakpoint                |
+| `<leader>dB`  | Conditional Breakpoint           |
+| `<leader>dt`  | Terminate debug session          |
+| `<leader>dl`  | Run last debug configuration     |
+
+### Debug UI & Inspection
+
+| Keymap       | Mode          | Description                   |
+| ------------ | ------------- | ----------------------------- |
+| `<leader>du` | Normal        | Toggle Debug UI               |
+| `<leader>de` | Normal/Visual | Evaluate expression           |
+| `<leader>dr` | Normal        | Open Debug REPL               |
+
+### Python-Specific Debugging
+
+| Keymap       | Description                         |
+| ------------ | ----------------------------------- |
+| `<leader>dm` | Debug pytest/unittest test method   |
+| `<leader>dc` | Debug pytest/unittest test class    |
+
+### Debug Workflow
+
+1. **Set breakpoints**: Press `<leader>db` on the line where you want to pause
+2. **Start debugging**: Press `<F5>` - the debug UI will open automatically
+3. **Step through code**: Use `<F10>` (step over), `<F11>` (step into), `<F12>` (step out)
+4. **Inspect variables**: Check the Scopes panel in the debug UI or use `<leader>de` to evaluate expressions
+5. **Continue**: Press `<F5>` to continue to the next breakpoint
+6. **Terminate**: Press `<leader>dt` to stop debugging
+
+### Debug UI Panels
+
+When debugging, the UI shows:
+- **Scopes**: All variables in current scope
+- **Breakpoints**: List of all breakpoints
+- **Stacks**: Call stack and frames
+- **Watches**: Custom expressions to monitor
+- **REPL**: Interactive Python console in debug context
+- **Console**: Program output
+
+### REPL Commands
+
+In the REPL (opened with `<leader>dr`):
+- `.help` - Show available commands
+- `.exit` - Close REPL
+- `.frames` - Show stack frames
+- `.up` / `.down` - Navigate stack
+- Any Python expression - Evaluate and show result
+
+### Virtual Text
+
+Variable values are shown inline next to your code as you debug (Neovim 0.10+).
+
+---
+
 ## Git Integration
 
 ### Gitsigns (Inline Git Changes)
