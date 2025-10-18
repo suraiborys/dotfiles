@@ -21,6 +21,11 @@ return {
           },
         },
       },
+      pickers = {
+        colorscheme = {
+          enable_preview = true,
+        },
+      },
     })
 
     telescope.load_extension("fzf")
@@ -32,5 +37,6 @@ return {
     keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
     keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+    keymap.set("n", "<leader>th", "<cmd>Telescope colorscheme<cr>", { desc = "Browse and select colorscheme" })
   end,
 }
