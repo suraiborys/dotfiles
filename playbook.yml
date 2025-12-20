@@ -69,13 +69,13 @@
         dest: ~/.config/nvim/lua/plugins/nvim-tree.lua
         state: link
 
-    - name: Link nvim which key 
+    - name: Link nvim which key
       file:
         src: "{{ playbook_dir }}/files/nvim/lua/plugins/nvim-tree.lua"
         dest: ~/.config/nvim/lua/plugins/which-key.lua
         state: link
 
-    - name: Link nvim telescope fuzzy finder 
+    - name: Link nvim telescope fuzzy finder
       file:
         src: "{{ playbook_dir }}/files/nvim/lua/plugins/telescope.lua"
         dest: ~/.config/nvim/lua/plugins/telescope.lua
@@ -244,4 +244,26 @@
       file:
         src: "{{ playbook_dir }}/files/starship/starship.toml"
         dest: ~/.config/starship/starship.toml
+        state: link
+
+    - name: Create yabai config directory
+      file:
+        path: ~/.config/yabai
+        state: directory
+
+    - name: Link yabai config
+      file:
+        src: "{{ playbook_dir }}/files/yabai/yabairc"
+        dest: ~/.config/yabai/yabairc
+        state: link
+
+    - name: Create skhd config directory
+      file:
+        path: ~/.config/skhd
+        state: directory
+
+    - name: Link skhd config
+      file:
+        src: "{{ playbook_dir }}/files/skhd/skhdrc"
+        dest: ~/.config/skhd/skhdrc
         state: link
