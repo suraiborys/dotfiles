@@ -30,6 +30,7 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Surfshark$" manage=off
 yabai -m rule --add app="^Signal$" manage=off
 yabai -m rule --add app="WhatsApp" manage=off
-yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^Claude$" manage=off
+yabai -m rule --add app="Finder" manage=off
+yabai -m rule --add app="Claude" manage=off
+yabai -m rule --add app="KeePassXC" manage=off
 

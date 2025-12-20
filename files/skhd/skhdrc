@@ -7,6 +7,7 @@ alt - p : open -a "Pycharm"
 alt - c : open -a "Claude"
 alt - f : open -a "Finder"
 alt - w : open -a "Whatsapp"
+alt - x : open -a "KeePassXC"
 
 ## Yabai Settings
 # change window focus within space
