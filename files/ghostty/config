@@ -5,6 +5,9 @@ copy-on-select = clipboard
 font-family = "Hack Nerd Font Mono"
 font-size = 14
 
+# Launch tmux by default (with auto-restore via continuum)
+command = tmux attach || tmux
+
 # Quick Terminal configuration
 keybind = global:cmd+shift+space=toggle_quick_terminal
 quick-terminal-position = center

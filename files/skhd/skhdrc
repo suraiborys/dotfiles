@@ -5,9 +5,13 @@ alt - v : open -a "Vivaldi"
 alt - s : open -a "Signal"
 alt - p : open -a "Pycharm"
 alt - c : open -a "Claude"
+alt - u : open -a "Visual Studio Code"
 alt - f : open -a "Finder"
 alt - w : open -a "Whatsapp"
 alt - x : open -a "KeePassXC"
+alt - t : open -a "kitty"
+alt - y : open -a "Youtube"
+alt - o : open -a "GoLand"
 
 ## Yabai Settings
 # change window focus within space

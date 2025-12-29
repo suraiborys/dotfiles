@@ -28,6 +28,7 @@ yabai -m mouse_drop_action swap
 
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="Surfshark" manage=off
+yabai -m rule --add app="kitty" manage=off
 yabai -m rule --add app="Signal" manage=off
 yabai -m rule --add app="Vivaldi" manage=off
 yabai -m rule --add app="WhatsApp" manage=off
