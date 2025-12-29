@@ -2,7 +2,7 @@
 
 Personal dotfiles managed with Ansible for macOS development environment.
 
-**Note**: This repository is for personal use. Use at your own risk.
+**Note**: This repository is for personal use. Co-created with Claude. Use at your own risk.
 
 ## What's Configured
 

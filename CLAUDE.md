@@ -99,6 +99,14 @@ files/
 
 ## Key Features
 
+### Ghostty Setup
+- **Quick Terminal**: Centered dropdown terminal accessible via `Cmd+Shift+Space`
+- **Auto-launch tmux**: Automatically attaches to existing tmux session or restores previous session via continuum
+- **Config reload**: `Cmd+Shift+R` to reload configuration without restart
+
+### skhd Setup
+- **App Launcher Shortcuts**: Global keyboard shortcuts using `Alt+<key>` to quickly launch applications (Ghostty, Vivaldi, Signal, PyCharm, Claude, VSCode, Finder, WhatsApp, KeePassXC, kitty, YouTube, GoLand)
+
 ### Neovim Setup
 - **Plugin Manager**: lazy.nvim with automatic plugin installation
 - **Colorscheme**: Tokyo Night with custom color overrides
@@ -126,6 +134,8 @@ files/
   - Auto-pairs for brackets/quotes
   - Indent guides
   - Split window maximizer
+  - DAP debugger integration
+  - UFO advanced code folding
 - **Documentation**: `nvim.md` contains all keyboard shortcuts reference
 
 ### Shell Enhancement
