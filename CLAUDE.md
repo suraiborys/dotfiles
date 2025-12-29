@@ -69,11 +69,13 @@ files/
 │           ├── linting.lua         # nvim-lint
 │           ├── gitsigns.lua        # Git integration
 │           ├── lazygit.lua         # Git TUI
+│           ├── debug.lua           # DAP debugger
+│           ├── ufo.lua             # Code folding
 │           └── lsp/
 │               ├── mason.lua       # LSP installer
 │               └── lspconfig.lua   # LSP configuration
+├── skhd/skhdrc                # Keyboard shortcuts for app launching
 ├── tmux/.tmux.conf            # Tmux with TPM plugin manager
-├── zed/settings.json          # Zed editor settings
 ├── zsh/.zshrc                 # ZSH with fzf, fd, plugins
 └── starship/starship.toml     # Starship prompt config
 ```

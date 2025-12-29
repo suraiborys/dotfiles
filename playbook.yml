@@ -71,7 +71,7 @@
 
     - name: Link nvim which key
       file:
-        src: "{{ playbook_dir }}/files/nvim/lua/plugins/nvim-tree.lua"
+        src: "{{ playbook_dir }}/files/nvim/lua/plugins/which-key.lua"
         dest: ~/.config/nvim/lua/plugins/which-key.lua
         state: link
 
@@ -188,17 +188,6 @@
         dest: ~/.config/nvim/lua/plugins/ufo.lua
         state: link
 
-    - name: Create zed config directory
-      file:
-        path: ~/.config/zed
-        state: directory
-
-    - name: Link zed config
-      file:
-        src: "{{ playbook_dir }}/files/zed/settings.json"
-        dest: ~/.config/zed/settings.json
-        state: link
-
     - name: Clone Tmux Plugin Manager if not exists
       git:
         repo: https://github.com/tmux-plugins/tpm
@@ -244,17 +233,6 @@
       file:
         src: "{{ playbook_dir }}/files/starship/starship.toml"
         dest: ~/.config/starship/starship.toml
-        state: link
-
-    - name: Create yabai config directory
-      file:
-        path: ~/.config/yabai
-        state: directory
-
-    - name: Link yabai config
-      file:
-        src: "{{ playbook_dir }}/files/yabai/yabairc"
-        dest: ~/.config/yabai/yabairc
         state: link
 
     - name: Create skhd config directory
