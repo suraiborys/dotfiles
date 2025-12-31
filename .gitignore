@@ -37,3 +37,6 @@ samples/python/*.pyc
 samples/python/.pytest_cache/
 samples/python/.venv/
 samples/python/venv/
+
+# tmp files
+tmp/*

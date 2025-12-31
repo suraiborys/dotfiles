@@ -39,10 +39,11 @@ return {
         },
       },
       filters = {
+        dotfiles = false, -- show hidden files (dotfiles)
         custom = { ".DS_Store" },
       },
       git = {
-        ignore = true,
+        ignore = false, -- show files in .gitignore
       },
     })
 
