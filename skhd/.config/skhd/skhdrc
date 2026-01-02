@@ -1,6 +1,6 @@
 ## App Launcher Shortcuts
 alt - g : open -a "Ghostty"
-alt - v : open -a "Vivaldi"
+alt - b : open -a "Brave Browser"
 alt - s : open -a "Signal"
 alt - p : open -a "Pycharm"
 alt - c : open -a "Claude"

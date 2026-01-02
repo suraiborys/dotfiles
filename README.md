@@ -1,53 +1,60 @@
 # Dotfiles
 
-Personal dotfiles managed with Ansible for macOS development environment.
+Personal dotfiles managed by [GNU Stow](https://www.gnu.org/software/stow/)
 
-**Note**: This repository is for personal use. Co-created with Claude. Use at your own risk.
+## Packages
 
-## What's Configured
-
-- **ghostty** - Terminal emulator with quick terminal support
+- **ghostty** - Terminal emulator
 - **neovim** - Full IDE setup with LSP, formatting, linting, and git integration
 - **tmux** - Terminal multiplexer with plugin manager and session persistence
 - **zsh** - Shell with fzf, fd integration, and smart completions
 - **starship** - Cross-shell prompt
 - **skhd** - Keyboard shortcuts for app launching
 
-## Installation
+## Prerequisites
+
+Install GNU Stow:
+
+### MacOS
 
 ```bash
-ansible-playbook -i inventory/hosts playbook.yml
+brew install stow
 ```
 
-## Structure
+### Ubuntu
 
-```
-files/
-├── ghostty/config           # Terminal emulator
-├── nvim/                    # Neovim with 22 plugins
-│   ├── init.lua
-│   ├── nvim.md             # Keybindings reference
-│   └── lua/plugins/        # Plugin configurations
-├── tmux/.tmux.conf         # Tmux with resurrect/continuum
-├── zsh/.zshrc              # Shell configuration
-├── starship/starship.toml  # Prompt configuration
-└── skhd/skhdrc             # Keyboard shortcuts
+```bash
+apt-get install stow
 ```
 
-## Neovim Features
+## Installation
 
-- **LSP**: Python (Pyright, Ruff), TypeScript (ts_ls), Lua, HTML, CSS, TailwindCSS
-- **Tools**: Telescope, nvim-tree, which-key, lazygit, treesitter
-- **UI**: Tokyo Night theme, lualine, bufferline, alpha dashboard
-- **Quality**: Auto-formatting, linting, completion, git integration
+Clone the repository:
 
-See `files/nvim/nvim.md` for complete keybindings.
+```bash
+git clone https://github.com/suraiborys/dotfiles.git
+cd dotfiles
+```
+
+Install packages (creates symlinks in `~`):
+
+```bash
+stow -t ~ {package_name}    # e.g. stow -t ~ nvim
+```
+
+Uninstall packages:
+
+```bash
+stow -t ~ -D {package_name}
+```
+
+**Note:** If stow encounters a conflict (name already exists and not owned by Stow), see [Conflicts](https://www.gnu.org/software/stow/manual/stow.html#Conflicts).
 
 ## Customization
 
-For personal settings not tracked in git:
+Create `~/.zshrc.local` for personal settings (not tracked in git). For example:
+
 ```bash
-# Create ~/.zshrc.local
 export EDITOR="nvim"
 alias ll="ls -la"
 ```
