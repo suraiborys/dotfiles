@@ -5,6 +5,7 @@ Personal dotfiles managed by [GNU Stow](https://www.gnu.org/software/stow/)
 ## Packages
 
 - **ghostty** - Terminal emulator
+- **helix** - Modal text editor
 - **neovim** - Full IDE setup with LSP, formatting, linting, and git integration
 - **tmux** - Terminal multiplexer with plugin manager and session persistence
 - **zsh** - Shell with fzf, fd integration, and smart completions
