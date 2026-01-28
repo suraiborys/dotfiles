@@ -7,6 +7,9 @@ setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_SILENT
 
+# Disable BEEP sound
+setopt NO_BEEP
+
 # Completion settings
 autoload -Uz compinit
 compinit -u
@@ -80,3 +83,4 @@ fi
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
+
