@@ -84,3 +84,14 @@ if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/borissuraj/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# opencode
+export PATH=/Users/borissuraj/.opencode/bin:$PATH
+
+# Added by Antigravity
+export PATH="/Users/borissuraj/.antigravity/antigravity/bin:$PATH"
